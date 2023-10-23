@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
   const squares = document.querySelectorAll('#board > div');
   const status = document.getElementById('status');
-  const newGameButton = document.querySelector('.btn'); 
   let currentPlayer = 'X';
   const gameState = ["", "", "", "", "", "", "", "", ""];
 
@@ -57,16 +56,15 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  
+  const newGameButton = document.querySelector('.btn'); 
   newGameButton.addEventListener('click', function () {
     squares.forEach(function (square) {
       square.textContent = '';
       square.classList.remove('X', 'O', 'hover');
     });
     gameState.fill('');
-    status.textContent = 'Move your mouse over a square and click to play an X or an O.';
     status.classList.remove('you-won');
+    status.textContent = 'Move your mouse over a square and click to play an X or an O.';
     currentPlayer = 'X'; 
   });
 });
-
